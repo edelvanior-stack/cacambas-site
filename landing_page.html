@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aluguel de caçambas com entrega rápida. Entre em contato agora mesmo pelo WhatsApp!" />
+    <title>Aluguel de Caçambas de Entulho</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+    <h2>Solicite um Orçamento Agora!</h2>
+        <h1>Aluguel de Caçambas com Entrega Rápida e Preço Justo</h1>
+        <p>Facilidade, rapidez e preços imperdíveis.</p>
+    </header>
+    <main>
+        <section class="benefits">
+            <h2>Por que escolher a nossa empresa?</h2>
+            <ul>
+                <li>Entrega rápida</li>
+                <li>Preço justo</li>
+                <li>Atendimento imediato</li>
+                <li>Pontualidade</li>
+                <li>Empresa confiável</li>
+            </ul>
+        </section>
+        <section class="contact-form">
+            <h2>Solicite um orçamento</h2>
+            <form id="leadForm" class="optimized-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="address">Endereço da obra:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="quantity">Quantidade de caçambas:</label>
+                <input type="number" id="quantity" name="quantity" required>
+                <label for="date">Data desejada:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit" class="cta-button">Solicitar Orçamento</button>
+            </form>
+        </section>
+        <section class="testimonials">
+            <h2>Depoimentos de Clientes</h2>
+            <ul>
+                <li>"Serviço excelente! Super recomendo." - Cliente A</li>
+                <li>"Atendimento rápido e eficiente!" - Cliente B</li>
+                <li>"Melhor preço da cidade!" - Cliente C</li>
+                <li>"Pontuais e confiáveis, voltarei a contratar." - Cliente D</li>
+                <li>"Entregaram a caçamba no horário combinado!" - Cliente E</li>
+            </ul>
+        </section>
+        <section class="map">
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.128929847591!2d-43.20639768446449!3d-22.908184685053843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997c7b4d37ed4bd%3A0x2b54fa78e39054b4!2sRua%20do%20Alem%C3%A3o%20-%20Aluguel%20de%20Ca%C3%A7ambas!5e0!3m2!1spt-BR!2sbr!4v1610590604330!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+    <footer>
+        <p>Entre em contato pelo WhatsApp: <a href="https://wa.me/5531972448607">Clique aqui!</a></p>
+    </footer>
+    <a href="https://wa.me/5531972448607" class="whatsapp-button">WhatsApp</a>
+</body>
+</html>
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background: #28a745;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.benefits,
+.testimonials,
+.contact-form,
+.map {
+    padding: 20px;
+}
+.contact-form {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form label {
+    margin: 10px 0 5px;
+}
+form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form button {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form button:hover {
+    background: #218838;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+}
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+// script.js
+document.getElementById('leadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const quantity = document.getElementById('quantity').value;
+    const date = document.getElementById('date').value;
+    if (name && phone && address && quantity && date) {
+        window.open(`https://wa.me/5531972448607?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20aluguel%20de%20caçamba.%20Nome:%20${name}%20Telefone:%20${phone}%20Endereço:%20${address}%20Quantidade:%20${quantity}%20Data:%20${date}.`);
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+});
